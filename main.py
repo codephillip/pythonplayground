@@ -1,6 +1,7 @@
 round_down = lambda n: round_down(n - 1) if n % 3 != 0 else n
-multiply_by_onefive = lambda amount, years: amount * 1.5 * (round_down(years) / 3)
-renewal_calc = lambda amount, years: multiply_by_onefive(amount, years) if int(multiply_by_onefive(amount, years)) else amount
+renewal_calc = lambda amount, years: int(amount * 1.5 * (round_down(years) / 3)) or int(amount)
+
+private_calc = lambda amount, years: int(amount * 1.5 * years) or int(amount)
 
 
 if __name__ == '__main__':
